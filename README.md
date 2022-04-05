@@ -29,7 +29,7 @@ clickhouse-rs = "*"
 * IPv4/IPv6
 * UUID
 
-## DNS
+## DNS 
 
 ```url
 schema://user:password@host[:port]/database?param1=value1&...&paramN=valueN
