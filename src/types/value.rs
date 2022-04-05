@@ -305,6 +305,16 @@ impl convert::From<Vec<u8>> for Value {
     }
 }
 
+impl convert::From<Vec<String>> for Value {
+    fn from(v: Vec<String>) -> Value {
+        let mut new_vec = vec![];
+        for d in v {
+            new_vec.push(Value::String(Arc::new(d.into_bytes())));
+        }
+        Value::Array(SqlType::String.into(), Arc::new(new_vec))
+    }
+}
+
 impl convert::From<&[u8]> for Value {
     fn from(v: &[u8]) -> Value {
         Value::String(Arc::new(v.to_vec()))
